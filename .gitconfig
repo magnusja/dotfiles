@@ -1,0 +1,37 @@
+[core]
+	excludesfile = /Users/magnusja/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Magnus
+	email = jahnen@in.tum.de
+[commit]
+	template = /Users/magnusja/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+
+[mergetool "intellij"]
+   cmd = '/Applications/IntelliJ IDEA.app/Contents/MacOS/idea' merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+   trustExitCode = true
+
+[difftool "intellij"]
+   cmd = '/Applications/IntelliJ IDEA.app/Contents/MacOS/idea' diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+   
+[mergetool "rubymine"]
+   cmd = '/Applications/RubyMine.app/Contents/MacOS/rubymine' merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+   trustExitCode = true
+
+[difftool "rubymine"]
+   cmd = '/Applications/RubyMine.app/Contents/MacOS/rubymine' diff $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE")
+   
+
+[merge]
+   tool = intellij
+[diff]
+   tool = intellij
