@@ -1,12 +1,29 @@
 function watch_sync_repo
+	switch (uname)
+    case Linux
+		echo 'Using poll monitor'
+        set -g fswatch_additional_params '--monitor=poll_monitor'
+    case '*'
+		echo 'Using standard monitor'
+		set -g fswatch_additional_params ''
+	end
+
+	echo 'Initial sync ...'
 	rsync_repo $argv[1] $argv[2]
-	fswatch --exclude .git $argv[1] | while read -l f
-		echo $status
-		if test $status -gt 128
-			break
+
+	echo 'Starting fswatch ...'
+	fswatch --exclude .git $fswatch_additional_params -r $argv[1] | while read -l f
+		if test $status -gt 0
+			echo "exiting"
+			return 0
 		end
 
 		echo $f
 		rsync_repo $argv[1] $argv[2]
+
+		if test $status -gt 0
+			echo "exiting"
+			return 0
+		end
 	end
 end

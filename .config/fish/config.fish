@@ -13,6 +13,7 @@ function nvm
   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 end
 
+alias op='xdg-open'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 alias init_docker='docker-machine start default; eval (docker-machine env default)'
 alias init_anaconda2='set -x PATH /usr/local/anaconda2/bin $PATH'
