@@ -13,17 +13,17 @@ function watch_sync_repo
 
 	echo 'Starting fswatch ...'
 	fswatch --exclude .git $fswatch_additional_params -r $argv[1] | while read -l f
-		if test $status -gt 0
+		if test $status -gt 128
 			echo "exiting"
-			return 0
+			return 128
 		end
 
 		echo $f
 		rsync_repo $argv[1] $argv[2]
 
-		if test $status -gt 0
+		if test $status -gt 128
 			echo "exiting"
-			return 0
+			return 128
 		end
 	end
 end

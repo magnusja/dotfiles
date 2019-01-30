@@ -13,7 +13,7 @@ function nvm
   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 end
 
-alias op='xdg-open'
+alias wf='watch grep \"cpu MHz\" /proc/cpuinfo'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/'
 alias init_docker='docker-machine start default; eval (docker-machine env default)'
 alias init_anaconda2='set -x PATH /usr/local/anaconda2/bin $PATH'
@@ -38,8 +38,7 @@ alias .3='cd ../../../'                     # Go back 3 directory levels
 alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
-alias edit='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text &'                           # edit:         Opens any file in sublime editor
-alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
+alias f='open ./'                  	    # f:            Opens current directory in MacOS Finder or uses xdg-open on Linux
 alias c='clear'                             # c:            Clear terminal display
 alias show_options='shopt'                  # Show_options: display bash options settings
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
