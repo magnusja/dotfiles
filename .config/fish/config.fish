@@ -19,6 +19,7 @@ alias init_docker='docker-machine start default; eval (docker-machine env defaul
 alias init_anaconda2='set -x PATH /usr/local/anaconda2/bin $PATH'
 alias init_poetry='set -x PATH $HOME/.poetry/bin $PATH'
 alias init_anaconda3='set -x PATH /usr/local/anaconda3/bin $PATH; source (conda info --root)/etc/fish/conf.d/conda.fish'
+alias init_pyenv='status --is-interactive; and source (pyenv init -|psub)'
 
 set -x EDITOR /usr/bin/vim
 
