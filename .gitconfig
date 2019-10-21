@@ -1,5 +1,6 @@
 [core]
 	excludesfile = /Users/magnusja/.gitignore_global
+	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -8,7 +9,7 @@
 	trustExitCode = true
 [user]
 	name = Magnus
-	email = jahnen@in.tum.de
+	email = magnus@jahnen.me
 [commit]
 	template = /Users/magnusja/.stCommitMsg
 [filter "lfs"]
