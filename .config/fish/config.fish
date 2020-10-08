@@ -47,4 +47,4 @@ alias cic='set completion-ignore-case On'   # cic:          Make tab-completion 
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
 
-source ~/.config/fish/fish_command_timer.fish
+source ~/.config/fish/functions/fish_command_timer.fish
