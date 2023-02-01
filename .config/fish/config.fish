@@ -5,7 +5,7 @@ set -x LANG en_US.UTF-8
 set -x NVM_DIR ~/.nvm
 set -x GOPATH ~/Library/go
 
-set -x PATH /usr/local/opt/qt5/bin /Users/magnusja/Library/Android/sdk/platform-tools $PATH
+set -x PATH $HOME/.cargo/bin /usr/local/opt/qt5/bin /Users/magnusja/Library/Android/sdk/platform-tools $PATH
 set -x CMAKE_PREFIX_PATH /usr/local/opt/qt5/lib/cmake 
 
 alias init_npm='bass source (brew --prefix nvm)/nvm.sh'
@@ -20,6 +20,12 @@ alias init_anaconda2='set -x PATH /usr/local/anaconda2/bin $PATH'
 alias init_poetry='set -x PATH $HOME/.poetry/bin $PATH'
 alias init_anaconda3='set -x PATH /usr/local/anaconda3/bin $PATH; source (conda info --root)/etc/fish/conf.d/conda.fish'
 alias init_pyenv='status --is-interactive; and source (pyenv init -|psub)'
+
+alias gcm='git checkout master'
+alias gp='git pull'
+alias gmm='git merge master'
+alias g='git'
+
 
 set -x EDITOR /usr/bin/vim
 
