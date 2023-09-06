@@ -25,6 +25,7 @@ alias gcm='git checkout master'
 alias gp='git pull'
 alias gmm='git merge master'
 alias g='git'
+alias gco='git checkout'
 
 
 set -x EDITOR /usr/bin/vim
@@ -54,3 +55,5 @@ alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file
 
 
 source ~/.config/fish/functions/fish_command_timer.fish
+
+source /Users/magnus/.docker/init-fish.sh || true # Added by Docker Desktop
